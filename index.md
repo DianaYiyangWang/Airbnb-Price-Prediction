@@ -40,11 +40,11 @@ The potential impact is to generate a price prediction model that is reliable an
 
 ### Reference 
 
-1. [Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH ...] (www.ijstr.org/final-print/dec2014/Comparative-Study-On-Estimate-House-Price-Using-Statistical-And-Neural-Network-Model-.pdf).
+1. [Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH ...](www.ijstr.org/final-print/dec2014/Comparative-Study-On-Estimate-House-Price-Using-Statistical-And-Neural-Network-Model-.pdf).
 
 2. Brunsdon, Chris E., et al. Geographically Weighted Regression: A Method for Exploring ... 1996,onlinelibrary.wiley.com/doi/abs/10.1111/j.1538-4632.1996.tb00936.x.
 
-3. [Dgomonov, (2019) New York City Airbnb Open Data, Version 3. Retrieved September 29, 2020] (https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
+3. [Dgomonov, (2019) New York City Airbnb Open Data, Version 3. Retrieved September 29, 2020](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
 
 4. Griliches, Z., ed., 1971, Price Indexes and Quality Changes: Studies in New Methods of Measurement, Cambridge, Mass: Harvard U. Press.
 
