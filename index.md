@@ -40,7 +40,7 @@ The potential impact is to generate a price prediction model that is reliable an
 
 ### Reference 
 
-1. [Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH ...](www.ijstr.org/final-print/dec2014/Comparative-Study-On-Estimate-House-Price-Using-Statistical-And-Neural-Network-Model-.pdf).
+1. Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH
 
 2. Brunsdon, Chris E., et al. Geographically Weighted Regression: A Method for Exploring ... 1996,onlinelibrary.wiley.com/doi/abs/10.1111/j.1538-4632.1996.tb00936.x.
 
