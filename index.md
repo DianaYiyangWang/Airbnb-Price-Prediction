@@ -47,7 +47,10 @@ For real estate or rent price prediction as noticed by Lu, Sifei, et al, applyin
 ### Part 3. Unsupervised Learning:
 
 Unsupervised learning is a great way for us to understand various patterns within the data, so that it can help us later as we try to implement supervised learning algorithms. Indeed, there are two fields in the dataset that can help us to visualize the data, namely longitude and latitude. With these two fields, we are able to plot the data points on the map of New York City, shown in the image below, and then observe the distribution of the data. 
+
 ![image](/unsupervised.png)
+
+
 In order to find patterns within our dataset, we utilize the Gaussian Mixture Model (GMM), K-means Clustering (KMC), and K-nearest neighbors (KNN) algorithms. In this discussion, we talk about the result generated from GMM and will elaborate more on other algorithms in the future. 
 
 ### 3.1 GMM
