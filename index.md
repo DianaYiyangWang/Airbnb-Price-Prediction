@@ -15,7 +15,7 @@ The problem for rental price estimation is a regression problem. In the set of {
 ### Data Collection
 
 We collect our data from New York City Airbnb Open Data provided on Kaggle[3], which can be found through this link, https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data. The dataset mentioned above is one of the public datasets that belong to Airbnb, and its original source can be found on this website, http://insideairbnb.com/. The raw dataset contains roughly 48.9K entries, and it consists of 16 distinct features. A detailed description of each feature can be seen in Table 1. 
-![image](https://github.com/DianaWyy/Team45/blob/gh-pages/datacleaning.png)
+![](https://github.com/DianaWyy/Team45/gh-pages/datacleaning.png)
 
 ### Methods
 
