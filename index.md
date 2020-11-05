@@ -96,14 +96,22 @@ For supervised learning, we will apply linear regression models(OLS), Lasso Regu
 
 ### Reference 
 
-1. Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH, Comparative-Study-On-Estimate-House-Price-Using-Statistical-And-Neural-Network-Model.
+1. Azme Bin Khamis, Azme Azme, and Nur Khalidah Khalilah Binti Kamarudin. INTERNATIONAL JOURNAL OF SCIENTIFIC & TECHNOLOGY RESEARCH ... www.ijstr.org/final-print/dec2014/Comparative-Study-On-Estimate-House-Price-Using-Statistical-And-Neural-Network-Model-.pdf.
 
 2. Brunsdon, Chris E., et al. Geographically Weighted Regression: A Method for Exploring ... 1996,onlinelibrary.wiley.com/doi/abs/10.1111/j.1538-4632.1996.tb00936.x.
 
-3. [Dgomonov, (2019) New York City Airbnb Open Data, Version 3. Retrieved September 29, 2020](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
+3. Chandrashekar, Girish, and Ferat Sahin. "A survey on feature selection methods." Computers & Electrical Engineering 40.1 (2014): 16-28.
 
-4. Griliches, Z., ed., 1971, Price Indexes and Quality Changes: Studies in New Methods of Measurement, Cambridge, Mass: Harvard U. Press.
+4. Dgomonov, (2019) New York City Airbnb Open Data, Version 3. Retrieved September 29, 2020 from https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data
 
-5. Rezazadeh, Pouya & Nikolenko, Liubov & Rezaei, Hoormazd. (2019). Airbnb Price Prediction Using Machine Learning and Sentiment Analysis. 
+5. Griliches, Z., ed., 1971, Price Indexes and Quality Changes: Studies in New Methods of Measurement, Cambridge, Mass: Harvard U. Press.
 
-6. Y. Li, Q. Pan, T. Yang and L. Guo, "Reasonable price recommendation on Airbnb using Multi-Scale clustering," 2016 35th Chinese Control Conference (CCC), Chengdu, 2016, pp. 7038-7041, doi: 10.1109/ChiCC.2016.7554467.
+6. Lu, Sifei, et al. "A hybrid regression technique for house prices prediction." 2017 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM). IEEE, 2017.
+
+7. Rezazadeh, Pouya & Nikolenko, Liubov & Rezaei, Hoormazd. (2019). Airbnb Price Prediction Using Machine Learning and Sentiment Analysis. 
+
+8. Tipping, Michael E., and Christopher M. Bishop. "Probabilistic principal component analysis." Journal of the Royal Statistical Society: Series B (Statistical Methodology) 61.3 (1999): 611-622.
+
+9. Y. Li, Q. Pan, T. Yang and L. Guo, "Reasonable price recommendation on Airbnb using Multi-Scale clustering," 2016 35th Chinese Control Conference (CCC), Chengdu, 2016, pp. 7038-7041, doi: 10.1109/ChiCC.2016.7554467.
+
+10. “Bayesian Information Criterion.” Wikipedia, Wikimedia Foundation, 12 Oct. 2020, en.wikipedia.org/wiki/Bayesian_information_criterion. 
