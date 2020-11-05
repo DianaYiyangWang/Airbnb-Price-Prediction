@@ -15,6 +15,7 @@ The problem for rental price estimation is a regression problem. In the set of {
 ### Data Collection
 
 We collect our data from New York City Airbnb Open Data provided on Kaggle[3], which can be found through this link, https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data. The dataset mentioned above is one of the public datasets that belong to Airbnb, and its original source can be found on this website, http://insideairbnb.com/. The raw dataset contains roughly 48.9K entries, and it consists of 16 distinct features. A detailed description of each feature can be seen in Table 1. 
+
 ![image](/datacollection1.png)
 ![image](/datacollection2.png)
 
@@ -24,14 +25,17 @@ For cleaning the dataset before further implementation, we will replace meaningl
 
 ### Part 1. Data Cleaning:
 The original dataset imported from Airbnb Kaggle Page is not ideal for modeling; thus a number of prepossessing of data is required. 
+
 ![image](/datacleaning.png)
 
 #### 1.1 Remove Null Values
 After loading the dataset. We firstly checked for all null values, and we found feature name, host_name, last_review, and reviews_per_month have null values and we replaced the null values with dummies like “NoName”, “NonReview”, or 0 for consistency. 
+
 ![image](/removenull.png)
 
 #### 1.2 Remove Price Outliers
 When we looked into the histogram for “price” feature, we found most of the data lies below $1000 and only 239 samples have price over $1000 compared with the total of 48.9K entries. Thus, we found it should be helpful to remove those outliers before further modeling. Additionally, the distribution was still right skewed, so we focused on price less than $250 in particular, which is the price range for most rents falling into. In this way, the samples are more Gaussian distributed. By comparison, the refined dataset has a better standard derivation.
+
 ![image](/removeprice.png)
 
 ### Part 2. Feature Engineering
@@ -39,6 +43,7 @@ In data engineering, feature engineering acts as an important role in preprocess
 
 #### 2.1 Dropping Irrelevant Columns and Feature Visualization
 We evaluated a number of features and removed those which are not relevant to “price”.
+
 ![image](/drop.png)
 
 #### 2.2 Feature Transformation
@@ -69,12 +74,14 @@ In the following discussion, we used k to represent the number of components.
 ### Result
 
 Since we rely on latitude and longitude to visualize the data points on the map of NYC, the first question that comes to our mind is: do we need to include these two features in our dataset. In order to investigate this question, we first applied GMM to the dataset with these two features. The graph below shows the BIC value for gmm models with different k. It indicates that the k that corresponds to the lowest BIC value shall be 17, with the BIC value being 1,224,315.67. However, using the “elbow method”, the optimal value for k shall be 9. The BIC value is 1,409,026.63 when k is 9.
+
 ![image](/result1.png)
 ![image](/result2.png)
 
 The image shows the belongings of all data points to 9 components. From this graph, it is relatively hard to find any patterns since there are a lot of data points with different colors overlapping with one another. 
 
 Next, we applied the GMM to the dataset without longitude and latitude. The image below shows the same type of graph. The value of k with the lowest BIC is 16, with the BIC value being 938,918.716. Due to the same reason, we choose 6 as the best choice. The corresponding BIC value is 1,278,966.05. 
+
 ![image](/result3.png)
 ![image](/result4.png)
 
@@ -85,8 +92,8 @@ Thus, as we used the gmm algorithm on the dataset with longitude and latitude an
 Hence, we have figured out the answer to the first question. After that, the second question we need an answer for is: is there a feature in the dataset generating clusters using gmm in a way that there is an obvious boundary between clusters? Since our primary goal is to use the various features within the dataset to predict the price of the housing, will the price be a good candidate for clustering our data?
 
 To answer this question, we created a dataset with only the price field included and repeated the same procedure as described above. 
+
 ![image](/result5.png)
-![image](/result6.png)
 
 The BIC graph above shows a nearly perfect curve. The k value that corresponds to the lowest value is 18, with the BIC value being 562,866.099. With the same principle, 4 is a better option, and its corresponding BIC is 567,777.56. Furthermore, from the clustering map, we have some interesting findings. Most of the purple and pink data points are clustered in Manhattan and some parts of Brooklyn. Outside these areas, nearly all the data points are orange. Thus, it seems to be a good idea to separate the data points in Manhattan and Brooklyn from other areas due to a boundary between these two groups. 
 
