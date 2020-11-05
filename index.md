@@ -20,37 +20,37 @@ We collect our data from New York City Airbnb Open Data provided on Kaggle[3], w
 
 For cleaning the dataset before further implementation, we will replace meaningless attributes with dummies to run models later. We may apply feature analysis to remove irrelevant features that may negatively impact our model’s accuracy.
 
-#### Part 1. Data Cleaning:
+### Part 1. Data Cleaning:
 The original dataset imported from Airbnb Kaggle Page is not ideal for modeling; thus a number of prepossessing of data is required. 
 
-##### 1.1 Remove Null Values
+#### 1.1 Remove Null Values
 After loading the dataset. We firstly checked for all null values, and we found feature name, host_name, last_review, and reviews_per_month have null values and we replaced the null values with dummies like “NoName”, “NonReview”, or 0 for consistency. 
 
-##### 1.2 Remove Price Outliers
+#### 1.2 Remove Price Outliers
 When we looked into the histogram for “price” feature, we found most of the data lies below $1000 and only 239 samples have price over $1000 compared with the total of 48.9K entries. Thus, we found it should be helpful to remove those outliers before further modeling. Additionally, the distribution was still right skewed, so we focused on price less than $250 in particular, which is the price range for most rents falling into. In this way, the samples are more Gaussian distributed. By comparison, the refined dataset has a better standard derivation.
 
-#### Part 2. Feature Engineering
+### Part 2. Feature Engineering
 In data engineering, feature engineering acts as an important role in preprocessing for prediction models. In this process, we need to select relevant features as input to our machine learning models. Common feature engineering methods include filter and wrapper methods [Chandrashekar, Girish, et al], where the first one uses methods like correlation and mutual information to select relevant features and the last one uses a simple model to select features that might give us the best performance such as sequential feature selector (forward/backward selector). 
 
-##### 2.1 Dropping Irrelevant Columns and Feature Visualization
+#### 2.1 Dropping Irrelevant Columns and Feature Visualization
 We evaluated a number of features and removed those which are not relevant to “price”.
 
-##### 2.2 Feature Transformation
+#### 2.2 Feature Transformation
 For real estate or rent price prediction as noticed by Lu, Sifei, et al, applying log transformations might improve final prediction results. Thus, we perform a log transformation on continuous features. After the log transformation, we will apply a sequential feature selector that is based on lasso regression to select a subset of features that gives us the lowest mean-squared-error. The selector is tested on retaining all features, 90% and 75% of features for 5 times (experiment 1). Finally, we do a PCA analysis on the selected subset of features. This is tested on retaining 100%, 80%, 60%, 50% of dimensions in order to select the best models (experiment 2). These tests show that we should keep all of our features and need to do a pca transformation that keeps 60% of dimensions to improve supervised learning methods’ generalization score. 
 
-#### Part 3. Unsupervised Learning:
+### Part 3. Unsupervised Learning:
 
 Unsupervised learning is a great way for us to understand various patterns within the data, so that it can help us later as we try to implement supervised learning algorithms. Indeed, there are two fields in the dataset that can help us to visualize the data, namely longitude and latitude. With these two fields, we are able to plot the data points on the map of New York City, shown in the image below, and then observe the distribution of the data. 
 In order to find patterns within our dataset, we utilize the Gaussian Mixture Model (GMM), K-means Clustering (KMC), and K-nearest neighbors (KNN) algorithms. In this discussion, we talk about the result generated from GMM and will elaborate more on other algorithms in the future. 
 
-##### 3.1 GMM
-###### Method:
+### 3.1 GMM
+#### Method:
 A Gaussian Mixture Model (GMM) is a probabilistic model that assumes all the data points are generated from a finite number of Gaussian distributions. Since we need to deal with a really huge dataset, we use this algorithm in order to find a way to cluster all the data points to different components based on features. Then, we can apply supervised learning algorithms on each component to get a better result because not only the data points in each component are fewer than the original dataset, but also it reduces the complexity of the problem as we cluster the data beforehand. Thus, in this part, we discuss the patterns we have found in the dataset. 
 
-###### Loss Function:
+#### Loss Function:
 In this section, we also introduce new terminology, Bayesian information criterion (BIC). It is a criterion that we can use to select the best model among a finite number of models [Bayesian information criterion]. The lower the value, the better the model. BIC is quite useful in this scenario because we don’t know how many components we need to create to cluster our data. With BIC, it can tell us how well the model did with this specific number of components.  
 
-###### Assumptions:
+#### Assumptions:
 We utilize the gmm function from scikit-learn to implement the GMM algorithm. The function takes in one parameter that represents the number of components. Since this gmm function can gradually become time-intensive as the number of components is large, we limit this number to be between 1 and 19. Thus, for every unique dataset we created from the original one, we created 19 models with the number of components for each model to be 1, 2, 3, … 19. 
 
 In the following discussion, we used k to represent the number of components. 
